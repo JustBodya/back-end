@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, abort
 from models import People, db
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -10,8 +11,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 
-TELEGRAM_BOT_TOKEN = '7291450376:AAFydYKV6IkkaiA8-uReAwcJ7crXmqbDzVY'
-TELEGRAM_CHAT_ID = '1529447580'
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 
 def send_to_telegram(message):

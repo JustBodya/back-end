@@ -9,7 +9,12 @@
 
 .feedback-inner {
     width: min(var(--content-width), 100%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 38px;
     position: relative;
     margin: 0 auto;
@@ -63,6 +68,22 @@
 .feedback__form input[type="text"] {
     height: 57px;
     border-radius: 16px;
+    font-size: 24px;
+}
+
+.feedback__form input[type="text"]::-webkit-input-placeholder {
+    font-size: 24px;
+}
+
+.feedback__form input[type="text"]::-moz-placeholder {
+    font-size: 24px;
+}
+
+.feedback__form input[type="text"]:-ms-input-placeholder {
+    font-size: 24px;
+}
+
+.feedback__form input[type="text"]::-ms-input-placeholder {
     font-size: 24px;
 }
 

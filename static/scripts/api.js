@@ -1,0 +1,1 @@
+const urlPostPeople = "/people"

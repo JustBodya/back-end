@@ -1,7 +1,14 @@
 #reviews {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     /* Отключаем pudding снаружи и ставим его внутри блоков
     для прокрутка комментариев была от края до края */
@@ -16,6 +23,8 @@
 .reviews-container {
     width: 100%;
     padding: 0 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 24px;
     overflow: auto;
@@ -24,7 +33,9 @@
 
 /* Отзыв */
 .review {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     min-height: 434px;
     padding: 16px;
     border-radius: 16px;
@@ -33,6 +44,8 @@
 
 /* Фото, имя и оценка */
 .review__top {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 24px;
 }

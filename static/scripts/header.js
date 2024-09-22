@@ -13,7 +13,7 @@ $("header ul").on("click tap", "a", function(event) {
 
 // Кнопка "Позвонить" в header, прокрутка страницы до нижней формы
 $("#header-contact").on("click tap", function() {
-    document.getElementById("footer").scrollIntoView({behavior: "smooth"})
+    document.querySelector(".feedback__form > input:first-of-type").scrollIntoView({behavior: "smooth"})
     $(".feedback__form > input:first-of-type").focus() // Фокусируем пользователя на первом инпуте
 })
 

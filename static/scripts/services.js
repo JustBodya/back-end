@@ -1,6 +1,6 @@
 // Переход на форму
 $(".service-link").on("click tap", () => {
-    document.querySelector("#feedback").scrollIntoView({behavior: "smooth"})
+    document.querySelector(".feedback__form > input:first-of-type").scrollIntoView({behavior: "smooth"})
     $(".feedback__form > input:first-of-type").focus() // Фокусируем пользователя на первом инпуте
 })
 

@@ -17,6 +17,30 @@ textarea {
     resize: none;
 }
 
+input[type="text"]::-webkit-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+input[type="text"]::-moz-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+input[type="text"]:-ms-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+input[type="text"]::-ms-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
 input[type="text"]::placeholder {
     font-weight: 400;
     font-size: 16px;
@@ -25,6 +49,8 @@ input[type="text"]::placeholder {
 
 /* Обвертка инпута */
 .input-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: #f9f1ef;
     border-radius: 8px;
@@ -46,6 +72,22 @@ input[type="text"]::placeholder {
     input[type="text"],
     textarea {
         height: 35px;
+        font-size: 14px;
+    }
+    
+    input[type="text"]::-webkit-input-placeholder {
+        font-size: 14px;
+    }
+    
+    input[type="text"]::-moz-placeholder {
+        font-size: 14px;
+    }
+    
+    input[type="text"]:-ms-input-placeholder {
+        font-size: 14px;
+    }
+    
+    input[type="text"]::-ms-input-placeholder {
         font-size: 14px;
     }
     

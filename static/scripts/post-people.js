@@ -1,1 +1,0 @@
-const urlPostPeople = "https://igorsaveliev-f37406687243.herokuapp.com/people"

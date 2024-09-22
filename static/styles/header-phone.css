@@ -3,8 +3,11 @@
     header {
         height: auto;
         padding-top: 16px;
-        box-sizing: border-box;
-        align-items: flex-start;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
     }
 
     /* Показываем кнопку открытия навигации */
@@ -34,8 +37,13 @@
         width: 50%;
         height: 100%;
         padding: 16px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         background-color: #4c9aff;
         position: relative;
         cursor: default;
@@ -44,7 +52,10 @@
     }
 
     nav ul {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         gap: 8px;
     }
 
@@ -63,19 +74,35 @@
     .nav-social-networks {
         width: 100%;
         padding: 16px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     .nav-social-networks li a {
         width: 40px;
         height: 40px;
     
+        display: -webkit-box;
+    
+        display: -ms-flexbox;
+    
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     
         cursor: pointer;
     }

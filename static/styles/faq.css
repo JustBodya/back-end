@@ -1,8 +1,13 @@
 /* #faq {} */
 
 .questions {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 8px;
     margin-top: 60px;
     
@@ -14,8 +19,11 @@
     background: #f9f1ef;
     position: relative;
     overflow: hidden;
-    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
 
+    -webkit-transition: .25s max-height ease-out;
+    -o-transition: .25s max-height ease-out;
     transition: .25s max-height ease-out;
 }
 
@@ -25,7 +33,9 @@
     /* height: 80px; */
     height: auto;
     padding: 21px 48px;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     position: relative;
     
     border-radius: 16px;
@@ -47,7 +57,9 @@
     position: absolute;
     top: 50%;
     left: 8px;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
 
     background-image: url("../assets/faq/star.svg");
     background-repeat: no-repeat;
@@ -60,6 +72,8 @@
     width: 38px;
     height: 38px;
     rotate: -90deg;
+    -webkit-transition: .25s rotate ease-out;
+    -o-transition: .25s rotate ease-out;
     transition: .25s rotate ease-out;
 
     position: absolute;

@@ -1,8 +1,12 @@
 /* #services {} */
 
 .services-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 24px;
 
     margin-top: 60px;
@@ -10,14 +14,18 @@
 
 .service {
     width: 421px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .service img {
     width: 421px;
     height: 260px;
-    border-radius: 16px;
     z-index: 1;
 }
 
@@ -35,7 +43,12 @@
     inset: 0;
     border-radius: 16px;
     padding: 1px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#006FFF), to(#F9F1EF));
+    background: -o-linear-gradient(top, #006FFF, #F9F1EF);
     background: linear-gradient(to bottom, #006FFF, #F9F1EF);
+    -webkit-mask: 
+      -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) content-box, 
+      -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
     -webkit-mask: 
       linear-gradient(#fff 0 0) content-box, 
       linear-gradient(#fff 0 0);
@@ -45,8 +58,13 @@
 }
 
 .service__block ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 28px;
 }
 

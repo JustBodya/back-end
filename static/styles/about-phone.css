@@ -8,14 +8,21 @@
 /* Моб. версия */
 @media screen and (max-width: 980px) {
     #about {
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     /* Верхняя часть секции */
     .about__top {
         width: min(420px, 100%);
-        flex-direction: column;
-        justify-content: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
     }
     
     /* Я увлечен своим предметом... */
@@ -54,7 +61,7 @@
         margin-top: 0;
     }
 
-    /* Высокие результаты занятий... */
+    /* Высокие результаты занятий... */
     .about__top-block:last-of-type p {
         font-size: 16px;
     }
@@ -67,8 +74,13 @@
     
     /* Галерея */
     .about__gallery {
-        flex-direction: column-reverse;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         gap: 8px;
         margin-top: 26px;
     }

@@ -3,14 +3,19 @@ dialog {
     height: 100%;
     padding: 16px;
     display: none;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     position: fixed;
     top: 0;
     left: 0;
     
-    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
     background: rgba(255, 255, 255, 0.2);
     cursor: pointer;
 
@@ -18,6 +23,8 @@ dialog {
 }
 
 dialog[open] {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -39,7 +46,12 @@ dialog[open] {
     inset: 0;
     border-radius: 14px;
     padding: 1px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#006FFF), to(#F9F1EF));
+    background: -o-linear-gradient(top, #006FFF, #F9F1EF);
     background: linear-gradient(to bottom, #006FFF, #F9F1EF);
+    -webkit-mask: 
+      -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) content-box, 
+      -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
     -webkit-mask: 
       linear-gradient(#fff 0 0) content-box, 
       linear-gradient(#fff 0 0);

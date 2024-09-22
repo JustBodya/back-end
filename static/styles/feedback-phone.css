@@ -15,7 +15,10 @@
 
     .feedback-inner {
         width: min(420px, 100%);
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         gap: 87px;
     }
     
@@ -49,6 +52,22 @@
     
     .feedback__form input[type="text"] {
         height: 46px;
+        font-size: 16px;
+    }
+    
+    .feedback__form input[type="text"]::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+    
+    .feedback__form input[type="text"]::-moz-placeholder {
+        font-size: 16px;
+    }
+    
+    .feedback__form input[type="text"]:-ms-input-placeholder {
+        font-size: 16px;
+    }
+    
+    .feedback__form input[type="text"]::-ms-input-placeholder {
         font-size: 16px;
     }
     

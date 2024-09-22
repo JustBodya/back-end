@@ -17,10 +17,15 @@
 button {
     height: 41px;
     padding: 8px 16px;
-
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     font-weight: 700;
 
@@ -28,7 +33,10 @@ button {
     border-radius: 8px;
 
     overflow: hidden;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     cursor: pointer;
 }
 

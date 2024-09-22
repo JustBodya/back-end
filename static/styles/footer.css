@@ -9,16 +9,27 @@ footer {
 .footer-inner {
     width: min(var(--content-width), 100%);
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 
     margin: 0 auto;
 }
 
 .footer-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 /* ИП Савельев Игорь Олегович */
@@ -28,6 +39,8 @@ footer {
 
 /* Список соц-сетей */
 .footer-info ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 46px;
 }
@@ -36,18 +49,27 @@ footer {
     width: 45px;
     height: 45px;
 
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     cursor: pointer;
 }
 
 /* Политика конфиденциальности */
 #footer-privacy-policy {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     font-size: 16px;
     color: var(--text-white);
     text-decoration: underline;
-    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip-ink: none;
+            text-decoration-skip-ink: none;
 }

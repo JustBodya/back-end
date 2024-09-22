@@ -11,7 +11,10 @@
     /* Контейнер с отзывами */
     .reviews-container {
         width: min(420px, 100%);
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         gap: 16px;
         padding: 0;
         margin-top: 26px;
@@ -21,7 +24,9 @@
     .review {
         min-height: auto;
         padding-bottom: 24px;
-        flex-grow: 0;
+        -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
+                flex-grow: 0;
     }
 
     /* Скрываем последние 2 отзыва */
@@ -63,6 +68,8 @@
 
     /* Кнопка показывающая доп отзывы в моб. версии */
     #reviews-more {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 }

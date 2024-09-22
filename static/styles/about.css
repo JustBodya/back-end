@@ -1,0 +1,124 @@
+#about {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Фигура на заднем фоне */
+.about__bg {
+    position: absolute;
+    top: -54px;
+    left: -49px;
+    z-index: -1;
+}
+
+/* Фигура на заднем фоне в моб. версии */
+.about__bg-phone {
+    display: none;
+    position: absolute;
+    top: 122px;
+    left: -46px;
+    z-index: -1;
+}
+
+
+/* Верхняя часть секции */
+.about__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__top-inner {
+    max-width: 644px;
+}
+
+/* Я увлечен своим предметом... */
+.about__top-inner > p:first-of-type {
+    font-size: 21px;
+    letter-spacing: -0.01em;
+    line-height: 1.4em;
+}
+
+/* Синий цвет выделенного текста */
+.about__top-inner p span {
+    font-size: inherit;
+    letter-spacing: inherit;
+    color: var(--text-blue);
+}
+
+.about__top-list {
+    width: 100%;
+    display: flex;
+    gap: 47px 24px;
+    flex-wrap: wrap;
+
+    margin-top: 56px;
+}
+
+.about__top-block {
+    width: 310px;
+    border-top: 1px solid #c7fc93;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Нумерация блоков */
+.about__top-block h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0065e8;
+    margin-top: 2px;
+}
+
+/* Текст блока */
+.about__top-block p {
+    font-size: 16px;
+    letter-spacing: -0.01em;
+}
+
+
+/* Последний элемент во всю строку */
+.about__top-block:last-of-type {
+    width: 100%;
+    border-top: none;
+    margin-top: -7px;
+}
+
+/* Высокие результаты занятий... */
+.about__top-block:last-of-type p {
+    font-size: 18px;
+}
+
+/* Скрываем нумерацию у последнего элемента */
+.about__top-block:last-of-type h4 {
+    display: none;
+}
+
+/* Галерея */
+.about__gallery {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 57px;
+}
+
+.about__gallery img {
+    border-radius: 16px;
+}
+
+.about__gallery img:nth-of-type(1) {
+    width: 643px;
+    height: 272px;
+}
+
+.about__gallery img:nth-of-type(2) {
+    width: 310px;
+    height: 272px;
+}
+
+.about__gallery img:nth-of-type(3) {
+    width: 311px;
+    height: 272px;
+}

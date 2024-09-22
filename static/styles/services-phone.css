@@ -1,0 +1,56 @@
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    .services-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 24px;
+    }
+    
+    .service {
+        width: min(420px, 100%);
+    }
+    
+    .service img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Заменяем картинку на мобильную */
+    .service:nth-of-type(1) img {
+        content: url("../assets/services/1-mob.png");
+    }
+
+    .service:nth-of-type(2) img {
+        content: url("../assets/services/2-mob.png");
+    }
+    
+    .service__block {
+        padding-top: 32px;
+        padding-bottom: 24px;
+        margin-top: -19px;
+    }
+    
+    .service__block li {
+        padding-left: 18px;
+        font-size: 18px;
+    }
+    
+    /* Звездочка слева от пунктов */
+    .service__block li::after {
+        top: 5px;
+    }
+    
+    /* Ценник */
+    .service__block p {
+        font-size: 20px;
+        margin-top: 38px;
+    }
+}
+
+/* Меняем отрицательный отступ от блока до картинки */
+@media screen and (max-width: 500px) {
+    .service__block {
+        margin-top: -3.8vw;
+    }
+}

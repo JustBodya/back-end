@@ -1,0 +1,76 @@
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    /* Скрываем кол-во элементов */
+    #faq .section-number {
+        display: none;
+    }
+
+    .questions {
+        width: min(420px, 100%);
+        margin: 24px auto 0 auto;
+    }
+    
+    .question {
+        max-height: 46px;
+        border-radius: 4px;
+    }
+
+    /* Последний вопрос меньше по высоте */
+    .question:last-of-type {
+        max-height: 24px;
+    }
+    
+    /* Текст вопроса */
+    .question button {
+        width: 100%;
+        height: auto;
+        padding: 4px 24px 4px 17px;
+        border-radius: 4px;
+    }
+
+    /* Делаем текст вопроса короче */
+    .question button p {
+        max-width: 300px;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    /* Укороченный вопрос */
+    .question.question_short button p {
+        max-width: 250px;
+    }
+    
+    /* Звездочка */
+    .question button::after {
+        width: 6px;
+        height: 6px;
+        top: 10px;
+        left: 6px;
+        background-size: 6px 6px;
+    }
+
+    /* Стрелочка */
+    .question button::before {
+        width: 11px;
+        height: 11px;
+        top: 20px;
+        right: 6px;
+        background-size: 11px 7px;
+    }
+
+    /* У последнего вопроса стрелочка выше */
+    .question:last-of-type button::before {
+        top: 7px;
+    }
+    
+    /* Ответ */
+    .question > p {
+        padding: 4px 17px;
+        font-size: 12px;
+    }
+    
+    /* Раскрываем ответ */
+    .question.opened {
+        max-height: 250px;
+    }
+}

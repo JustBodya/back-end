@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, abort
+from flask import Flask, request, jsonify, abort, render_template
 from flask_cors import CORS
 from models import People, db
 import requests
@@ -15,6 +15,12 @@ CORS(app)
 
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
+
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 def send_to_telegram(message):

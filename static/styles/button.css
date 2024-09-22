@@ -1,0 +1,119 @@
+:root {
+    --button-blue: #006fff;
+    --button-blue-hover: #1f80ff;
+    --button-blue-active: #0062e0;
+
+    --button-green: #c7fc93;
+    --button-green-hover: #c0f48d;
+    --button-green-active: #b1ff65;
+
+    --button-gray: #f9f1ef;
+    --button-gray-hover: #f1e7e5;;
+    --button-gray-active: #f9f1ef;
+
+    --button-disabled: #f0e6e4;;
+}
+
+button {
+    height: 41px;
+    padding: 8px 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+
+    border: none;
+    border-radius: 8px;
+
+    overflow: hidden;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Моб. версия */
+@media screen and (max-width: 500px) {
+    button {
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+button.blue {
+    color: var(--text-white);
+    background-color: var(--button-blue);
+}
+
+button.green {
+    color: var(--text-black);
+    background-color: var(--button-green);
+}
+
+button.gray {
+    color: var(--text-black);
+    background-color: var(--button-gray);
+}
+
+/* Недоступная кнопка */
+button:disabled {
+    cursor: not-allowed;
+    color: #afafaf;
+    background-color: var(--button-disabled);
+}
+
+
+/* Наведение на пк */
+@media (hover: hover) {
+    button.blue:hover,
+    button.blue:focus-visible {
+        background-color: var(--button-blue-hover);
+    }
+
+    button.blue:active { /* Зажатие кнопки */
+        background: var(--button-blue-active);
+    }
+
+    button.green:hover,
+    button.green:focus-visible {
+        background-color: var(--button-green-hover);
+    }
+
+    button.green:active { /* Зажатие кнопки */
+        background-color: var(--button-green-active);
+    }
+
+    button.gray:hover,
+    button.gray:focus-visible {
+        background-color: var(--button-gray-hover);
+    }
+
+    button.gray:active { /* Зажатие кнопки */
+        background-color: var(--button-gray-active);
+    }
+
+    button:disabled:hover,
+    button:disabled:focus-visible {
+        background-color: var(--button-disabled);
+    }
+}
+
+
+/* Нажатие на телефоне */
+@media (hover: none) {
+    button.blue:active {
+        background-color: var(--button-blue-active);
+    }
+
+    button.green:active {
+        background-color: var(--button-green-active);
+    }
+
+    button.gray:active {
+        background-color: var(--button-hover-gray);
+    }
+
+    button:disabled:active {
+        background-color: var(--button-disabled);
+    }
+}

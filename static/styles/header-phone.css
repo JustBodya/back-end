@@ -1,0 +1,82 @@
+/* Переход на моб. меню */
+@media screen and (max-width: 740px) {
+    header {
+        height: auto;
+        padding-top: 16px;
+        box-sizing: border-box;
+        align-items: flex-start;
+    }
+
+    /* Показываем кнопку открытия навигации */
+    #open-menu {
+        display: block;
+    }
+
+    /* Скрываем навигацию */
+    .nav-bg {
+        display: none;
+    }
+    
+    .nav-bg.opened {
+        width: 100%;
+        height: 100%;
+        display: block;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 4;
+
+        cursor: pointer;
+    }
+
+    nav {
+        width: 50%;
+        height: 100%;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        background-color: #4c9aff;
+        position: relative;
+        cursor: default;
+
+        z-index: 5;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav li a {
+        color: var(--text-white);
+        font-size: 17px;
+    }
+
+    .nav-social-networks {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .nav-social-networks {
+        width: 100%;
+        padding: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-social-networks li a {
+        width: 40px;
+        height: 40px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        cursor: pointer;
+    }
+}

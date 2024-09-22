@@ -1,0 +1,51 @@
+header {
+    width: min(var(--content-width), 100%);
+    padding: 24px 16px 0 16px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin: 0 auto;
+}
+
+/* Навигация */
+nav {
+    height: 22px;
+}
+
+/* Скрываем соц сети из навигации */
+.nav-social-networks {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    gap: 24px;
+}
+
+/* Кнопки в навигации */
+nav li a {
+    font-size: 16px;
+}
+
+/* Кнопка "Позвонить" */
+#header-contact {
+    height: 35px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* Кнопка отрытия мобильного меню */
+#open-menu {
+    display: none;
+    width: 36px;
+    height: 30px;
+    padding: 0;
+    background-color: transparent;
+}
+
+#open-menu img {
+    width: 36px;
+    height: 30px;
+}

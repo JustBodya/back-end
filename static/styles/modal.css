@@ -1,0 +1,92 @@
+dialog {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    backdrop-filter: blur(25px);
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+
+    z-index: 6;
+}
+
+dialog[open] {
+    display: flex;
+}
+
+.dialog-inner {
+    width: 500px;
+    padding: 20px 20px;
+    border-radius: 14px;
+    background: #fff;
+    position: relative;
+    cursor: default;
+
+    z-index: 6;
+}
+
+/* Градиентная обводка */
+.dialog-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 1px;
+    background: linear-gradient(to bottom, #006FFF, #F9F1EF);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+}
+
+.dialog__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.dialog__text {
+    margin-top: 8px;
+}
+
+.dialog-inner button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: 1px solid #666666;
+    padding: 0;
+    position: absolute;
+    top: -48px;
+    right: 0;
+}
+
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    .dialog-inner {
+        width: min(286px, 100%);
+        padding: 20px 20px;
+        border-radius: 14px;
+        background: #fff;
+        position: relative;
+    
+        z-index: 6;
+    }
+
+    .dialog__title {
+        font-size: 17px;
+    }
+    
+    .dialog__text {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+}

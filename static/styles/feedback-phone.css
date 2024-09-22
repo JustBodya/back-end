@@ -1,0 +1,95 @@
+/* Двигаем фигуру на заднем фоне */
+@media screen and (max-width: 1360px) {
+    .feedback__bg {
+        top: 197px;
+        left: 90px;
+    }
+}
+
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    #feedback {
+        height: auto;
+        padding: 25px 14px 34px 14px;
+    }
+
+    .feedback-inner {
+        width: min(420px, 100%);
+        flex-direction: column;
+        gap: 87px;
+    }
+    
+    /* Фигура на заднем фоне */
+    .feedback__bg {
+        display: none;
+    }
+
+    /* Фигура на заднем фоне в моб. версии */
+    .feedback__bg-phone {
+        display: block;
+    }
+    
+    
+    /* Остались вопросы? */
+    .feedback-inner h2 {
+        font-size: 32px;
+    }
+    
+    /* Оставьте заявку... */
+    .feedback-inner h3 {
+        width: auto;
+        font-size: 16px;
+    }
+    
+    
+    /* Форма обратной связи */
+    .feedback__form {
+        width: 100%;
+    }
+    
+    .feedback__form input[type="text"] {
+        height: 46px;
+        font-size: 16px;
+    }
+    
+    .feedback__form input[type="text"]::placeholder {
+        font-size: 16px;
+    }
+    
+    .feedback__form label {
+        padding: 12px 0 12px 8px;
+        font-size: 16px;
+    }
+    
+    .feedback__form textarea {
+        font-size: 16px;
+    }
+
+    /* Ошибка формы */
+    #feedback-form-error {
+        font-size: 16px;
+    }
+    
+    /* Кнопка "Отправить" */
+    .feedback__form button {
+        height: 46px;
+        font-size: 16px;
+    }
+}
+
+/* Уменьшаем заголовки */
+@media screen and (max-width: 403px) {
+    .feedback-inner h2 {
+        font-size: 26px;
+    }
+
+    .feedback-inner h3 {
+        padding-right: 50px
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .feedback-inner {
+        gap: 60px;
+    }
+}

@@ -1,0 +1,60 @@
+/* Уменьшаем фото и сдвигаем в право */
+@media screen and (max-width: 1220px) {
+    .info__image {
+        width: auto;
+        height: 100%;
+    
+        top: 0px;
+        right: 16px;
+    }
+}
+
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    #info {
+        
+        justify-content: center;
+    }
+
+    .info-inner {
+        width: min(420px, 100%);
+    }
+    
+    /* Открой путь к знаниям и успеху */
+    .info-inner h1 {
+        font-size: 36px;
+    }
+    
+    /* Подготовка к ОГЭ и ЕГЭ по обществознанию */
+    .info-inner h3 {
+        font-size: 17px;
+    }
+    
+    /* Запишитесь на бесплатную консультацию... */
+    .info-inner p {
+        letter-spacing: -0.01em;
+        margin-top: 40px;
+    }
+    
+    
+    /* Форма записи */
+    .info__form {
+        margin-top: 14px;
+    }
+    
+    .info__form .input-wrapper:last-of-type {
+        margin-top: 1px;
+    }
+
+    /* Кнопка "Отправить */
+    .info__form button {
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    
+    /* Скрываем фото */
+    .info__image {
+        display: none;
+    }
+}

@@ -1,0 +1,101 @@
+#feedback {
+    width: 100%;
+    height: 482px;
+    padding-top: 96px;
+    border-radius: 26px;
+    background-color: var(--text-blue);
+    overflow: hidden;
+}
+
+.feedback-inner {
+    width: min(var(--content-width), 100%);
+    display: flex;
+    gap: 38px;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Фигура на заднем фоне */
+.feedback__bg {
+    position: absolute;
+    top: 160px;
+    left: 157px;
+    z-index: 0;
+}
+
+
+/* Фигура на заднем фоне в моб. версии */
+.feedback__bg-phone {
+    display: none;
+    position: absolute;
+    top: 17px;
+    right: -15px;
+    z-index: 0;
+}
+
+
+/* Остались вопросы? */
+.feedback-inner h2 {
+    font-weight: 700;
+    font-size: 56px;
+    color: var(--text-white);
+}
+
+/* Оставьте заявку... */
+.feedback-inner h3 {
+    width: 400px;
+    letter-spacing: 0.02em;
+    font-size: 28px;
+    color: var(--text-white);
+}
+
+
+/* Форма обратной связи */
+.feedback__form {
+    width: 644px;
+}
+
+.feedback__form .input-wrapper {
+    border-radius: 16px;
+    margin-top: 2px;
+}
+
+.feedback__form input[type="text"] {
+    height: 57px;
+    border-radius: 16px;
+    font-size: 24px;
+}
+
+.feedback__form input[type="text"]::placeholder {
+    font-size: 24px;
+}
+
+.feedback__form label {
+    padding: 12px 0 15px 8px;
+    font-size: 24px;
+}
+
+.feedback__form textarea {
+    height: 89px;
+    border-radius: 16px;
+    font-size: 24px;
+
+    margin-top: 2px;
+}
+
+/* Ошибка формы */
+#feedback-form-error {
+    color: var(--text-white);
+    font-size: 24px;
+}
+
+/* Кнопка "Отправить" */
+.feedback__form button {
+    width: 100%;
+    height: 57px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 24px;
+
+    margin-top: 16px;
+}

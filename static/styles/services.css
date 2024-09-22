@@ -1,0 +1,89 @@
+/* #services {} */
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+    margin-top: 60px;
+}
+
+.service {
+    width: 421px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service img {
+    width: 421px;
+    height: 260px;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.service__block {
+    width: 100%;
+    position: relative;
+    padding: 28px 4px 21px 19px;
+    margin-top: -16px;
+}
+
+/* Градиентная обводка */
+.service__block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(to bottom, #006FFF, #F9F1EF);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+}
+
+.service__block ul {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.service__block li {
+    position: relative;
+    padding-left: 13px;
+
+    font-size: 21px;
+    letter-spacing: -0.01em;
+}
+
+/* Звездочка слева от пунктов */
+.service__block li::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    top: 10px;
+    left: 0;
+
+    background-image: url("../assets/services/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Ценник */
+.service__block p {
+    width: 100%;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text-blue);
+    
+    margin-top: 40px;
+}
+
+.service button {
+    border-radius: 16px;
+}

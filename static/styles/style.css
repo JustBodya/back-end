@@ -1,0 +1,129 @@
+/* Helvetica Neue */
+/* @import url("https://fonts.cdnfonts.com/css/helvetica-neue-5"); */
+
+/* Comfortaa */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+
+/* Helvetica */
+@font-face {
+    font-family: "Helvetica";
+    src: url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
+        url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
+        url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
+}
+
+
+:root {
+    --font-family: "Helvetica", sans-serif;
+    --second-family: "Comfortaa", sans-serif;
+
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --text-blue: #006fff;
+    --text-green: #c7fc93;
+
+    /* 1312 + 16 + 16 */
+    --content-width: 1344px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+
+    font-family: var(--font-family);
+    font-weight: 300; /* Вместо 400 */
+    font-size: 18px;
+    line-height: 1.35em;
+    color: var(--text-black);
+    text-decoration: none;
+
+    box-sizing: border-box;
+    list-style-type: none;
+    scroll-behavior: smooth;
+    color-scheme: light;
+
+    transition: .2s all;
+}
+
+main {
+    padding-top: 52px;
+    overflow: hidden;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+section {
+    width: min(var(--content-width), 100%);
+    padding: 0 16px;
+}
+
+
+/* Блок с заголовком и нумерацией секции */
+.section-header {
+    width: min(var(--content-width), 100%);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Заголовки секций */
+.section-title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 42px;
+    line-height: normal;
+}
+
+/* Число элементов в секции */
+.section-number {
+    color: var(--text-green);
+    font-weight: 700;
+    font-size: 42px;
+    line-height: normal;
+    font-style: italic;
+}
+
+/* Ошибка в форме */
+.form-error {
+    font-size: 16px;
+    color: #FF0000;
+    margin-top: 8px;
+}
+
+
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    * {
+        font-size: 14px;
+    }
+
+    main {
+        padding-top: 27px;
+    }
+
+    article {
+        gap: 46px;
+    }
+
+
+    .section-header {
+        width: min(420px, 100%);
+        margin: 0 auto;
+    }
+
+    /* Заголовки секций */
+    /* Число элементов в секции */
+    .section-title,
+    .section-number {
+        font-size: 30px;
+    }
+
+    /* Ошибка в форме */
+    .form-error {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,53 @@
+footer {
+    height: 192px;
+    padding: 32px 64px 40px 64px;
+    background-color: #000E21;
+    color: var(--text-white);
+}
+
+/* Ограничиваем ширину внутренней части footer */
+.footer-inner {
+    width: min(var(--content-width), 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 0 auto;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ИП Савельев Игорь Олегович */
+.footer-info p {
+    color: var(--text-white);
+}
+
+/* Список соц-сетей */
+.footer-info ul {
+    display: flex;
+    gap: 46px;
+}
+
+.footer-info li a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+/* Политика конфиденциальности */
+#footer-privacy-policy {
+    width: fit-content;
+    font-size: 16px;
+    color: var(--text-white);
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+}

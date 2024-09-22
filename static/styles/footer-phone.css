@@ -1,0 +1,35 @@
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    footer {
+        height: 192px;
+        padding: 16px;
+    }
+
+    .footer-inner {
+        width: min(420px, 100%);
+    }
+    
+    .footer-info {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+    }
+
+    /* ИП Савельев Игорь Олегович */
+    .footer-info p {
+        font-size: 12px;
+        margin-top: 70px;
+    }
+    
+    /* Список соц-сетей */
+    .footer-info ul {
+        width: min(420px, 100%);
+        justify-content: space-between;
+        gap: 0;
+    }
+    
+    /* Политика конфиденциальности */
+    #footer-privacy-policy {
+        font-size: 10px;
+        margin-top: 8px;
+    }
+}

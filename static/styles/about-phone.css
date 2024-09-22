@@ -1,0 +1,98 @@
+/* Скрываем третью картинку */
+@media screen and (max-width: 1350px) {
+    .about__gallery img:nth-of-type(3) {
+        display: none;
+    }
+}
+
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    #about {
+        align-items: center;
+    }
+
+    /* Верхняя часть секции */
+    .about__top {
+        width: min(420px, 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    /* Я увлечен своим предметом... */
+    .about__top-inner > p:first-of-type {
+        font-size: 16px;
+        margin-top: 27px;
+    }
+    
+    .about__top-list {
+        gap: 7px;
+        margin-top: 20px;
+    }
+    
+    .about__top-block {
+        width: 100%;
+    }
+    
+    /* Нумерация блоков */
+    .about__top-block h4 {
+        font-size: 18px;
+    }
+    
+    /* Текст блока */
+    .about__top-block p {
+        font-size: 16px;
+    }
+
+    .about__top-block p br {
+        display: none;
+    }
+
+
+    /* Последний элемент во всю строку */
+    .about__top-block:last-of-type {
+        border-top: 1px solid #c7fc93;
+        margin-top: 0;
+    }
+
+    /* Высокие результаты занятий... */
+    .about__top-block:last-of-type p {
+        font-size: 16px;
+    }
+
+    /* Показываем нумерацию у последнего элемента */
+    .about__top-block:last-of-type h4 {
+        display: block;
+    }
+
+    
+    /* Галерея */
+    .about__gallery {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 8px;
+        margin-top: 26px;
+    }
+    
+    .about__gallery img:nth-of-type(1),
+    .about__gallery img:nth-of-type(2) {
+        width: min(420px, 100%);
+        height: auto;
+    }
+}
+
+/* Показываем моб. фон  */
+@media screen and (max-width: 500px) {
+    #about {
+        overflow: hidden;
+    }
+
+    /* Фигура на заднем фоне */
+    .about__bg {
+        display: none;
+    }
+
+    /* Фигура на заднем фоне в моб. версии */
+    .about__bg-phone {
+        display: block;
+    }
+}

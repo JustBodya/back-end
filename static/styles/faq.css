@@ -1,0 +1,90 @@
+/* #faq {} */
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 60px;
+    
+}
+
+.question {
+    max-height: 80px;
+    border-radius: 16px;
+    background: #f9f1ef;
+    position: relative;
+    overflow: hidden;
+    box-sizing: content-box;
+
+    transition: .25s max-height ease-out;
+}
+
+/* Текст вопроса */
+.question button {
+    width: 100%;
+    /* height: 80px; */
+    height: auto;
+    padding: 21px 48px;
+    justify-content: flex-start;
+    position: relative;
+    
+    border-radius: 16px;
+    background-color: transparent;
+}
+
+.question button p {
+    font-weight: 300;
+    color: var(--text-black);
+    font-size: 28px;
+}
+
+/* Звездочка */
+.question button::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+
+    background-image: url("../assets/faq/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Стрелочка */
+.question button::before {
+    content: "";
+    width: 38px;
+    height: 38px;
+    rotate: -90deg;
+    transition: .25s rotate ease-out;
+
+    position: absolute;
+    top: 21px;
+    right: 26px;
+
+    background-image: url("../assets/faq/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Отключаем взаимодействие */
+    pointer-events: none
+}
+
+/* Ответ */
+.question > p {
+    padding: 0 88px 21px 48px;
+}
+
+/* Стрелочка поворачивается когда вопрос развернут */
+.question.opened button::before {
+    rotate: 0deg;
+}
+
+/* Раскрываем ответ */
+.question.opened {
+    max-height: 220px;
+}

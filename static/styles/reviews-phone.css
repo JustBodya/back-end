@@ -1,0 +1,68 @@
+/* Моб. версия */
+@media screen and (max-width: 980px) {
+    #reviews {
+        padding: 0 16px;
+    }
+
+    #reviews .section-header {
+        padding: 0;
+    }
+
+    /* Контейнер с отзывами */
+    .reviews-container {
+        width: min(420px, 100%);
+        flex-direction: column;
+        gap: 16px;
+        padding: 0;
+        margin-top: 26px;
+    }
+    
+    /* Отзыв */
+    .review {
+        min-height: auto;
+        padding-bottom: 24px;
+        flex-grow: 0;
+    }
+
+    /* Скрываем последние 2 отзыва */
+    .review.phone-hide {
+        display: none;
+    }
+    
+    .review__top-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Фото автора */
+    .review__top-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    
+    /* Имя автора */
+    .review__top-info p {
+        font-size: 18px;
+        margin-top: 6px;
+    }
+    
+    /* Оценка */
+    .review__top-info img {
+        width: 152px;
+        height: 24px;
+        margin-top: 8px;
+    }
+    
+    /* Текст отзыва */
+    .review__text {
+        font-size: 12px;
+        line-height: 1.4em;
+        margin-top: 20px;
+    }
+
+    /* Кнопка показывающая доп отзывы в моб. версии */
+    #reviews-more {
+        display: flex;
+    }
+}

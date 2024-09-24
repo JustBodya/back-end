@@ -67,6 +67,7 @@
 
 .feedback__form input[type="text"] {
     height: 57px;
+    padding: 12px 8px;
     border-radius: 16px;
     font-size: 24px;
 }
@@ -92,7 +93,6 @@
 }
 
 .feedback__form label {
-    padding: 12px 0 15px 8px;
     font-size: 24px;
 }
 

@@ -3,7 +3,7 @@
 
 /* Helvetica */
 @font-face {
-    font-family: "Helvetica";
+    font-family: "Helvetica-unofficial";
     src: url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
         url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
         url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
@@ -11,7 +11,7 @@
 
 
 :root {
-    --font-family: "Helvetica", sans-serif;
+    --font-family: "Helvetica", "Helvetica-unofficial", "Arial", sans-serif;
     --second-family: "Comfortaa", sans-serif;
 
     --text-black: #000000;

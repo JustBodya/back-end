@@ -22,6 +22,7 @@
     
     /* Отзыв */
     .review {
+        width: 100%;
         min-height: auto;
         padding-bottom: 24px;
         -webkit-box-flex: 0;

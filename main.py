@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, abort, render_template
+from flask import Flask, request, jsonify, abort, render_template, redirect
 from flask_cors import CORS
 from models import People, db
 import requests
@@ -17,6 +17,12 @@ TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 
+
+@app.before_request
+def redirect_non_www():
+    if request.host == "igorsavelievsocialstudies.ru":
+        return redirect(f"http://www.igorsavelievsocialstudies.ru{request.path}", code=301)
+    
 
 @app.route('/')
 def index():

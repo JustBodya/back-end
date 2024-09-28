@@ -88,7 +88,7 @@ function infoFormSuccess() {
 }
 
 // Если форма отправлена
-if (!localStorage.infoFormSuccess) {
+if (localStorage.infoFormSuccess) {
     infoFormSuccess()
 } else {
     $(".info__form").css("visibility", "visible")

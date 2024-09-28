@@ -15,28 +15,24 @@ CORS(app)
 
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
-
-
-
-@app.before_request
-def redirect_non_www():
-    if request.host == "igorsavelievsocialstudies.ru":
-        return redirect(f"http://www.igorsavelievsocialstudies.ru{request.path}", code=301)
     
 
+subscribed_users = set()
+
+
+# Отоброжение главной страницы
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/sitemap.xml')
+# XML запрос
+@app.route('/sitemap')
 def sitemap():
     return app.send_static_file('sitemap.xml')
 
 
-subscribed_users = set()
-
-
+# Функция фитбэк для того, чтобы чат бот отправлял заявки каждому запустившему бот человеку
 @app.route('/webhook', methods=['POST'])
 def handle_telegram_webhook():
     data = request.get_json()
@@ -49,7 +45,7 @@ def handle_telegram_webhook():
     return jsonify({"error": "Invalid request"}), 400
 
 
-
+# Функция отправки заявки в тг канал
 def send_to_telegram(message):
     success = True
     for chat_id in subscribed_users:
@@ -65,12 +61,14 @@ def send_to_telegram(message):
     return success
 
 
+# Получение данных из БД
 @app.route('/people', methods=['GET'])
 def get_people():
     people = People.query.all()
     return jsonify([i.to_dict() for i in people])
 
 
+# Добавление человека и его данных в БД
 @app.route('/people', methods=['POST'])
 def post_people():
 
@@ -90,6 +88,7 @@ def post_people():
         return jsonify({"error": "Не удалось отправить сообщение в Telegram"}), 500
 
 
+# Создание БД и запуск сервера
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()

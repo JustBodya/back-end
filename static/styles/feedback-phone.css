@@ -53,7 +53,6 @@
     /* Форма обратной связи */
     .feedback__form {
         width: 100%;
-        visibility: hidden;
     }
     
     .feedback__form input[type="text"] {

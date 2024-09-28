@@ -60,6 +60,7 @@
 /* Форма обратной связи */
 .feedback__form {
     flex-grow: 1;
+    visibility: hidden;
 }
 
 .feedback__form .input-wrapper {

@@ -29,6 +29,38 @@ def index():
     return render_template('index.html')
 
 
+subscribed_users = set()  # Используем set, чтобы не было дубликатов
+
+
+@app.route('/webhook', methods=['POST'])
+def handle_telegram_webhook():
+    data = request.get_json()
+
+    if 'message' in data and 'chat' in data['message']:
+        chat_id = data['message']['chat']['id']
+        subscribed_users.add(chat_id)
+        return jsonify({"status": "ok"}), 200
+    
+    return jsonify({"error": "Invalid request"}), 400
+
+
+
+def send_to_telegram(message):
+    success = True
+    for chat_id in subscribed_users:
+        url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage'
+        data = {
+            'chat_id': chat_id,
+            'text': message
+        }
+        response = requests.post(url, data=data)
+        if response.status_code != 200:
+            success = False
+    
+    return success
+
+
+'''
 def send_to_telegram(message):
     url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage'
     data = {
@@ -36,7 +68,8 @@ def send_to_telegram(message):
         'text': message
     }
     response = requests.post(url, data=data)
-    return response.status_code == 200
+    return response.status_code == 200 
+'''
 
 
 @app.route('/people', methods=['GET'])

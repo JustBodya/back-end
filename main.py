@@ -14,9 +14,7 @@ db.init_app(app)
 CORS(app)
 
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-ALLOWED_CHAT_IDS = {1529447580, 823203359}
-
-subscribed_users = set()
+ALLOWED_CHAT_IDS = os.getenv('ALLOWED_CHAT_IDS')
 
 
 # Отоброжение главной страницы
@@ -25,28 +23,15 @@ def index():
     return render_template('index.html')
 
 
-# XML запрос
-@app.route('/sitemap')
-def sitemap():
-    return app.send_static_file('sitemap.xml')
-
-
 # Функция отправки заявки в тг канал
 def send_to_telegram(message):
-  
-    success = True
-    for chat_id in subscribed_users:
-        if chat_id in ALLOWED_CHAT_IDS:
-            url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage'
-            data = {
-                'chat_id': chat_id,
-                'text': message
-            }
-            response = requests.post(url, data=data)
-            if response.status_code != 200:
-                success = False
-    return success
-
+    url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage'
+    data = {
+        'chat_id': ALLOWED_CHAT_IDS,
+        'text': message
+    }
+    response = requests.post(url, data=data)
+    return response.status_code == 200
 
 # Получение данных из БД
 @app.route('/people', methods=['GET'])

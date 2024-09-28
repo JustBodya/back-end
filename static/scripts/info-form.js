@@ -79,6 +79,9 @@ $(".info__form").submit((event) => {
 function infoFormSuccess() {
     $(".info__form").remove()
     $(".info-inner p").remove()
+
+    $(".info__form-success").remove() // Фикс бага с двойным отображением текста
+
     $(".info-inner").append(`
         <div class="info__form-success">
             <h3>Заявка успешно отправлена!</h3>

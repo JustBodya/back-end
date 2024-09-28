@@ -14,7 +14,7 @@ db.init_app(app)
 CORS(app)
 
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-ALLOWED_CHAT_IDS = {1529447580}
+ALLOWED_CHAT_IDS = {1529447580, 823203359}
 
 subscribed_users = set()
 
@@ -29,23 +29,6 @@ def index():
 @app.route('/sitemap')
 def sitemap():
     return app.send_static_file('sitemap.xml')
-
-
-# Функция фитбэк для того, чтобы чат бот отправлял заявки каждому запустившему бот человеку
-@app.route('/webhook', methods=['POST'])
-def handle_telegram_webhook():
-    data = request.get_json()
-
-    if 'message' in data and 'chat' in data['message']:
-        chat_id = data['message']['chat']['id']
-        if chat_id in ALLOWED_CHAT_IDS:
-            print(f"Chat ID added: {chat_id}")
-            subscribed_users.add(chat_id)
-
-        return jsonify({"status": "ok"}), 200
-
-    return jsonify({"error": "Invalid request"}), 400
-
 
 
 # Функция отправки заявки в тг канал

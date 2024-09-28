@@ -1,8 +1,12 @@
-/* Двигаем фигуру на заднем фоне */
-@media screen and (max-width: 1360px) {
-    .feedback__bg {
-        top: 197px;
-        left: 90px;
+/* Уменьшаем фигуру на заднем фоне */
+@media screen and (max-width: 1160px) {
+    /* Остались вопросы? */
+    .feedback-inner h2 {
+        font-size: 42px;
+    }
+
+    .feedback__bg svg {
+        width: 300px;
     }
 }
 
@@ -10,11 +14,12 @@
 @media screen and (max-width: 980px) {
     #feedback {
         height: auto;
-        padding: 25px 14px 34px 14px;
+        padding: 25px 16px 34px 16px;
     }
 
     .feedback-inner {
         width: min(420px, 100%);
+        padding: 0;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
@@ -48,6 +53,7 @@
     /* Форма обратной связи */
     .feedback__form {
         width: 100%;
+        visibility: hidden;
     }
     
     .feedback__form input[type="text"] {
@@ -94,6 +100,19 @@
         height: 46px;
         font-size: 16px;
     }
+
+    /* Текст после отправки формы */
+    .feedback__form-success {
+        padding-bottom: 206px;
+    }
+
+    .feedback__form-success h2 {
+        font-size: 22px;
+    }
+
+    .feedback__form-success h3 {
+        font-size: 16px;
+    }
 }
 
 /* Уменьшаем заголовки */
@@ -104,6 +123,20 @@
 
     .feedback-inner h3 {
         padding-right: 50px
+    }
+
+
+    /* Текст после отправки формы */
+    .feedback__form-success {
+        padding-bottom: 180px;
+    }
+
+    .feedback__form-success h2 {
+        font-size: 22px;
+    }
+
+    .feedback__form-success h3 {
+        padding-right: 0;
     }
 }
 

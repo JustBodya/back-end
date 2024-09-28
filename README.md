@@ -79,5 +79,5 @@ http://127.0.0.1:5000/people
 
 
 
-### Проект 1 (Сайт визитка)
-Старый сайт: https://igorsavelievsocialstudies.ru/1
+### Проект (Сайт визитка)
+Сайт: https://www.igorsavelievsocialstudies.ru

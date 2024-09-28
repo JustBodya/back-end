@@ -29,7 +29,12 @@ def index():
     return render_template('index.html')
 
 
-subscribed_users = set()  # Используем set, чтобы не было дубликатов
+@app.route('/sitemap.xml')
+def sitemap():
+    return app.send_static_file('sitemap.xml')
+
+
+subscribed_users = set()
 
 
 @app.route('/webhook', methods=['POST'])
@@ -58,18 +63,6 @@ def send_to_telegram(message):
             success = False
     
     return success
-
-
-'''
-def send_to_telegram(message):
-    url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage'
-    data = {
-        'chat_id': TELEGRAM_CHAT_ID,
-        'text': message
-    }
-    response = requests.post(url, data=data)
-    return response.status_code == 200 
-'''
 
 
 @app.route('/people', methods=['GET'])

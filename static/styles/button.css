@@ -8,10 +8,10 @@
     --button-green-active: #b1ff65;
 
     --button-gray: #f9f1ef;
-    --button-gray-hover: #f1e7e5;;
+    --button-gray-hover: #f1e7e5;
     --button-gray-active: #f9f1ef;
 
-    --button-disabled: #f0e6e4;;
+    --button-disabled: #f0e6e4;
 }
 
 button {

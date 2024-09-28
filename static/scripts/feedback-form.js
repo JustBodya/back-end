@@ -3,7 +3,7 @@ const FBPhoneMask = IMask($("#feedback-phone").get(0), {mask: "000 000 00 00"})
 
 // Поле name, удаление лишних пробелов
 $("#feedback-name").on("change", () => {
-    $("#info-name").val($("#info-name").val().replace(/ +/g, " ").trim())
+    $("#feedback-name").val($("#feedback-name").val().replace(/ +/g, " ").trim())
 })
 
 // Автоматические скрытие ошибки при обновлении инпутов
@@ -24,7 +24,7 @@ $(".feedback__form").submit((event) => {
     // Проверяем валидность  полей
     validateForm(formName, formPhone, formQuestion).then(() => {
         // Если все проверки прошло - отключаем кнопку и ждем ответа от сервера
-        $("#info-form-submit").attr("disabled", true)
+        $("#feedback-form-submit").attr("disabled", true)
         
         let data = {
             name: formName,
@@ -38,14 +38,35 @@ $(".feedback__form").submit((event) => {
             data: JSON.stringify(data),
             contentType: 'application/json; charset=utf-8',
             dataType: "json",
-            success: (data) => {
-                console.log(data);
-                console.log("success");
-            },
+            success: () => {
+                localStorage.FBFormSuccess = "true"
+                FBFormSuccess()
+            }
         })
+
+        localStorage.FBFormSuccess = "true"
+        FBFormSuccess()
     })
     .catch(error => {
         // Показываем ошибку под конкретной формой
         $("#feedback-form-error").text(error).show()
     })
 })
+
+// Отображаем текст после отправки формы
+function FBFormSuccess() {
+    $(".feedback__form").remove()
+    $(".feedback-inner").append(`
+        <div class="feedback__form-success">
+            <h2>Заявка успешно отправлена!</h2>
+            <h3>Ожидайте звонка в ближайшее время</h3>
+        </div>
+    `)
+}
+
+// Если форма отправлена
+if (localStorage.FBFormSuccess) {
+    FBFormSuccess()
+} else {
+    $(".feedback__form").css("visibility", "visible")
+}

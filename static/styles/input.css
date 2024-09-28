@@ -13,6 +13,12 @@ textarea {
     font-size: 16px;
 }
 
+/* Фикс авто ввода */
+input[type=text]:-webkit-autofill,
+input[type=text]:-webkit-autofill:focus {
+	transition: background-color 600000s 0s, color 600000s 0s;
+}
+
 textarea {
     resize: none;
 }

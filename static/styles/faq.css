@@ -44,8 +44,9 @@
 
 .question button p {
     font-weight: 300;
-    color: var(--text-black);
     font-size: 28px;
+    text-align: left;
+    color: var(--text-black);
 }
 
 /* Звездочка */
@@ -100,5 +101,5 @@
 
 /* Раскрываем ответ */
 .question.opened {
-    max-height: 220px;
+    max-height: 250px;
 }

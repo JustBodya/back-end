@@ -60,14 +60,37 @@ $(".info__form").submit((event) => {
             data: JSON.stringify(data),
             contentType: 'application/json; charset=utf-8',
             dataType: "json",
-            success: (data) => {
-                console.log(data);
-                console.log("success");
-            },
+            success: () => {
+                localStorage.infoFormSuccess = "true"
+                infoFormSuccess()
+            }
         })
+
+        localStorage.infoFormSuccess = "true"
+        infoFormSuccess()
     })
     .catch(error => {
         // Показываем ошибку под конкретной формой
         $("#info-form-error").text(error).show()
     })
 })
+
+// Отображаем текст после отправки формы
+function infoFormSuccess() {
+    $(".info__form").remove()
+    $(".info-inner p").remove()
+    $(".info-inner").append(`
+        <div class="info__form-success">
+            <h3>Заявка успешно отправлена!</h3>
+            <p>Ожидайте звонка в ближайшее время</p>
+        </div>
+    `)
+}
+
+// Если форма отправлена
+if (!localStorage.infoFormSuccess) {
+    infoFormSuccess()
+} else {
+    $(".info__form").css("visibility", "visible")
+    $(".info-inner p").css("visibility", "visible")
+}

@@ -32,7 +32,7 @@
     }
     
     /* Запишитесь на бесплатную консультацию... */
-    .info-inner p {
+    .info-inner > p {
         letter-spacing: -0.01em;
         margin-top: 40px;
     }
@@ -51,6 +51,21 @@
     .info__form button {
         height: 35px;
         font-size: 14px;
+    }
+
+    /* Текст после отправки формы */
+    .info__form-success {
+        padding-bottom: 53px;
+        margin-top: 100px;
+    }
+
+    .info__form-success h3 {
+        font-size: 22px;
+    }
+
+    .info__form-success p {
+        color: var(--text-blue);
+        font-size: 17px;
     }
     
     

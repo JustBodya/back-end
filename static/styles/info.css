@@ -21,8 +21,9 @@
 }
 
 /* Запишитесь на бесплатную консультацию... */
-.info-inner p {
+.info-inner > p {
     max-width: 469px;
+    visibility: hidden;
     margin-top: 100px;
 }
 
@@ -30,6 +31,7 @@
 /* Форма записи */
 .info__form {
     width: min(420px, 100%);
+    visibility: hidden;
     margin-top: 16px;
 }
 
@@ -41,6 +43,22 @@
 .info__form button {
     width: 100%;
     margin-top: 8px;
+}
+
+/* Текст после отправки формы */
+.info__form-success {
+    padding-bottom: 131px;
+    margin-top: 100px;
+}
+
+.info__form-success h3 {
+    font-family: var(--second-family);
+    font-weight: 700;
+}
+
+.info__form-success p {
+    color: var(--text-blue);
+    font-size: 20px;
 }
 
 

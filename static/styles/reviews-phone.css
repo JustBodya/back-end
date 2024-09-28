@@ -55,9 +55,7 @@
     
     /* Оценка */
     .review__top-info img {
-        width: 152px;
-        height: 24px;
-        margin-top: 8px;
+        height: auto;
     }
     
     /* Текст отзыва */

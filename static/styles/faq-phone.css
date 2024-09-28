@@ -31,7 +31,6 @@
     /* Делаем текст вопроса короче */
     .question button p {
         max-width: 300px;
-        text-align: left;
         font-size: 12px;
     }
 
@@ -67,10 +66,5 @@
     .question > p {
         padding: 4px 17px;
         font-size: 12px;
-    }
-    
-    /* Раскрываем ответ */
-    .question.opened {
-        max-height: 250px;
     }
 }
